@@ -1,0 +1,26 @@
+to run the code:
+
+catkin_make in root folder
+
+rosrun stage_ros stageros $(rospack find assignment1)/world/exercise.world 
+
+rosrun first_assignment random_target
+
+rosrun first_assignment reach_target
+
+in the package i'm using the following nodes:
+random_target- this is the node i created to handle the service
+
+reach_target- this is the node i created to handle the subscriber, the publisher and the client 
+for the service
+
+stageros- this node is used by the simulation
+
+rosout- this node is used for the output to screen
+
+computational graph of the system: 
+we can see that the node reach_target has both a subscriber and a publisher in the node stageros. 
+The random_target server is broadcasting a message and the reach_target can read it with is client. 
+
+
+
