@@ -163,13 +163,14 @@ def normalize_angle(angle):
         angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
     return angle
 
-#def callback(data):
-    #return data.status_list[0].status
+def callback(data):
+    global my_data
+    my_data = data.status_list[0].status
 
 def main():
     time.sleep(2)
     global regions_, position_, desired_position_, state_, yaw_, yaw_error_allowed_
-    global srv_client_go_to_point_, srv_client_wall_follower_, srv_client_user_interface_, pub
+    global srv_client_go_to_point_, srv_client_wall_follower_, srv_client_user_interface_, pub, my_data
 
     rospy.init_node('bug0')
 
@@ -177,8 +178,9 @@ def main():
     sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
 
-    #my_data = rospy.Subscriber("/move_base/status", GoalStatusArray, callback)
-
+    #rospy.Subscriber("/move_base/status", GoalStatusArray, callback)
+   
+    
     srv_client_go_to_point_ = rospy.ServiceProxy(
         '/go_to_point_switch', SetBool)
     srv_client_wall_follower_ = rospy.ServiceProxy(
@@ -222,13 +224,15 @@ def main():
             if(err_pos > 0.35):
                 change_state(0)
         elif state_ == 3:
-            change_state(6)
-            #if my_data == 3:
-                #change_state(5)
+            #change_state(6)
+            rospy.Subscriber("/move_base/status", GoalStatusArray, callback)
+            if my_data == 3:
+                change_state(6)
         elif state_ == 4:
-            change_state(6)
-            #if my_data == 3:
-                #change_state(5)
+            #change_state(6)
+            rospy.Subscriber("/move_base/status", GoalStatusArray, callback)
+            if my_data == 3:
+                change_state(6)
         elif state_ == 5:
             print('shutting down')
             rospy.signal_shutdown("user chose to shutdown")
