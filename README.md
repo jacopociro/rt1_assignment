@@ -3,9 +3,9 @@
 both the first and second assignment for research track 1 course.
 
 for the first assignment, inside the folder first_assignment:
-  -to run the code:
+  -to run the code(in the root folder):
 
-    catkin_make in root folder
+    catkin_make 
 
     rosrun stage_ros stageros $(rospack find assignment1)/world/exercise.world 
 
@@ -46,14 +46,15 @@ for the final assignment, inside the folder final_assignment:
     simulation_gmapping.launch: launches the simulation
     
     user2.launch: launches the program to run the robot.
-   -to run the code:
+   -to run the code(is better to split the instructions in 3 terminals):
 
-    catkin_make in root folder
+    catkin_make 
     
-    in a terminal write: roslaunch final_assignment simulation_gmapping.launch
+    roslaunch final_assignment simulation_gmapping.launch
     
-    in another terminal write: roslaunch final_assignment move_base.launch
+    roslaunch final_assignment move_base.launch
     
-    lastly in a third terminal write: roslaunch final_assignment user2.launch
+    roslaunch final_assignment user2.launch
+    
    this should start the robot, and the robot should move to a set position (-3, -3). Once this is done it should ask for further instructions in the terminal. 
    When using the move_base algorithm it displays an error message but this does not stop the program and the callback helps with making the robot work continuosly.
