@@ -30,20 +30,21 @@ for the first assignment, inside the folder first_assignment:
 for the final assignment, inside the folder final_assignment:
   the final assignment has many scripts, most of them are outdated. In the scripts folder the ones i use are:
     
-    wall_follow_service_m.py: this is a service we use to make the robot follow the walls
+   -wall_follow_service_m.py: this is a service we use to make the robot follow the walls
     
-    go_to_point_service_m.py: this is a service used by the robot to reach a point using the bug0 algorithm
+   -go_to_point_service_m.py: this is a service used by the robot to reach a point using the bug0 algorithm
     
-    randomnumberserver.py: this node generates a random number
+   -randomnumberserver.py: this node generates a random number
     
-    user_interface.py which is in a folder called robot_description
+   -user_interface.py which is in a folder called robot_description
     
-    user_interface_4.py: this is the node that is used to reach points using the move_base algorithm and to change the states of the robot.
-   in the launch folder we will use the launch files called:
+   -user_interface_4.py: this is the node that is used to reach points using the move_base algorithm and to change the states of the robot.
+   
+in the launch folder we will use the launch files called:
     
-    move_base.launch: launch the move_base algorithm
+   -move_base.launch: launch the move_base algorithm
     
-    simulation_gmapping.launch: launches the simulation
+   -simulation_gmapping.launch: launches the simulation
     
     user2.launch: launches the program to run the robot.
    -to run the code(is better to split the instructions in 3 terminals):
