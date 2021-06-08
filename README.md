@@ -33,6 +33,8 @@ for the final assignment, inside the folder final_assignment:
    -wall_follow_service_m.py: this is a service we use to make the robot follow the walls
     
    -go_to_point_service_m.py: this is a service used by the robot to reach a point using the bug0 algorithm
+   
+ the rosgraph.png image inside the file shows how the node are linked and communicate.
     
    -randomnumberserver.py: this node generates a random number
     
