@@ -46,7 +46,7 @@ in the launch folder we will use the launch files called:
     
    -simulation_gmapping.launch: launches the simulation
     
-    user2.launch: launches the program to run the robot.
+   -user2.launch: launches the program to run the robot.
    -to run the code(is better to split the instructions in 3 terminals):
 
     catkin_make 
